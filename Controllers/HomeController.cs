@@ -20,6 +20,7 @@ namespace SimpSimulator.Controllers
 
         public IActionResult Index()
         {
+            Simp ismaelo = new Simp("Ismael ReSimpo",9001, 10000);
             return View();
         }
 
