@@ -8,20 +8,27 @@
     <br />
     <p>Tabla de simps:</p>
 
-    @{int simpMoney = 20000; }
+    @{List<Simp> simps = ViewBag.simps;}
 
+    
 
     <table>
         <tr>
-            <th>simp name</th>
-            <th>simp level</th>
-            <th>simp money left</th>
+            <th>Simp name</th>
+            <th>Simp level</th>
+            <th>Simp money left</th>
         </tr>
-        <tr>
-            <td>ismaelo</td>
-            <td>9001</td>
-            <td>simpMoney</td>
-        </tr>
+
+        @foreach (var simp in simps)
+        {
+            <tr>
+                <td>@simp.simpName</td>
+                <td>@simp.simpLvl</td>
+                <td>@simp.simpMoneyLeft</td>
+            </tr>
+
+        }
+        
     </table>
 
 

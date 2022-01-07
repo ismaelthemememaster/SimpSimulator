@@ -9,7 +9,6 @@ namespace SimpSimulator.Models
             this.simpLvl = lvl;
             this.simpMoneyLeft = moneyLeft;
         }
-
         public string simpName { get; set; }
 
         public int simpLvl { get; set; }

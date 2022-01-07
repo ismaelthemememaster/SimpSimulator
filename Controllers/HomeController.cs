@@ -20,7 +20,15 @@ namespace SimpSimulator.Controllers
 
         public IActionResult Index()
         {
-            Simp ismaelo = new Simp("Ismael ReSimpo",9001, 10000);
+            Simp simp1 = new Simp("Ismael ReSimpo",9001, 10000);
+            Simp simp2 = new Simp("Kazuya Cuck", 1000000, 0);
+
+            List<Simp> simps = new List<Simp>();
+            simps.Add(simp1);
+            simps.Add(simp2);
+
+            ViewBag.simps = simps;
+
             return View();
         }
 
