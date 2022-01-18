@@ -2,16 +2,16 @@ using System;
 
 namespace SimpSimulator.Models
 {
-    public class Simp
+    public class Simp : Thirsty
     {
-        public Simp(string name, int lvl, int moneyLeft) {
+        public Simp(string name, int lvl, int moneyLeft, string personality) {
             this.simpName = name;
-            this.simpLvl = lvl;
+            this.simpLevel = lvl;
             this.simpMoneyLeft = moneyLeft;
         }
         public string simpName { get; set; }
 
-        public int simpLvl { get; set; }
+        public int simpLevel { get; set; }
 
         public int simpMoneyLeft { get; set; }
 
