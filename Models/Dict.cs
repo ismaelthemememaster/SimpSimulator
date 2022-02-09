@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace SimpSimulator.Models
 {
-    public class Dict<Ttype, Tlevel>
+    public class Dict<Ttype, Tlevel> where Ttype : GamerGirl
     {
         //Type A = typeof(T1<int, int>);
         public Dict() {
@@ -20,11 +21,32 @@ namespace SimpSimulator.Models
             levelOfPatheticness.Add(level);
         }
 
-        public void ShowLoyalties()
+        public string ShowLoyalties()
         {
-            foreach (Ttype idol in objectOfAdoration)
+            StringBuilder buffer = new StringBuilder("");
+
+            if (objectOfAdoration.Count == 0) {
+                return "I serve no one";
+            }
+            else {
+                buffer.Append("I serve");
+                foreach (Ttype idol in objectOfAdoration)
+                {
+                    buffer.Append(" {idol.name},");
+                }
+                return buffer.ToString();
+            }
+        }
+
+        public string AskLoyalty(Ttype idol)
+        {
+            var index = objectOfAdoration.IndexOf(idol);
+            if (index > -1)
             {
-                Console.WriteLine($"I serve {idol.ToString()}");
+                return ($"{idol.name} you say?, I've never heard of that normie, does she do feet pics?");
+            }
+            else {
+                return ($"Yes, I serve {idol.name}, I simp for her {levelOfPatheticness[index]} times a day");
             }
         }
 
